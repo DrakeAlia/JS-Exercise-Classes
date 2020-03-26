@@ -137,7 +137,7 @@ class Lambdasian {
 class Instructor extends Lambdasian { /* Instructor with class extending Lambdasian */
   constructor(obj) {
     super(obj); /* access/call to functions on an object's parent */
-    this.speciality = obj.speciality;
+    this.specialty = obj.specialty;
     this.favLanguage = obj.favLanguage;
     this.catchPhrase = obj.catchPhrase;
   }
@@ -164,8 +164,22 @@ class Instructor extends Lambdasian { /* Instructor with class extending Lambdas
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
-
+class Student extends Lambdasian {
+  constructor(obj) {
+    super(obj); /* access/call to functions on an object's parent */
+    this.previousBackground = obj.previousBackground;
+    this.className = obj.className;
+    this.favSubjects = obj.favSubjects;
+  }
+  listSubjects() { /* method with listSubjects that returns the favSubjects in a single string */
+    return `Loving ${this.favSubjects}`;
+  }
+  PRAssignment(subject) { /* method with gPRAssignment that receives subject as an argument and returns this.name */
+    return `${this.name} has submitted a PR for ${subject}`;
+  }
+  sprintChallenge(subject) { /* method with sprintChallenge that receives subject as an argument and returns this.name */
+    return `${this.name} has begun spring challenge on ${subject}`
+  }
 }
 
 /*
