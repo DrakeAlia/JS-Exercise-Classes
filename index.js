@@ -110,10 +110,10 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-  constructor(obj) { /* constructor with agrument of object(obj) */
-    this.name = obj.name;
-    this.age = obj.age;
-    this.location = obj.location;
+  constructor(att) { /* constructor with agrument of object(obj) */
+    this.name = att.name;
+    this.age = att.age;
+    this.location = att.location;
   }
   speak() {
     return `Hello my name is ${this.name}, I am from ${this.location}`; /* return phrase with name and location properties */
@@ -135,11 +135,11 @@ class Lambdasian {
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 class Instructor extends Lambdasian { /* Instructor with class extending Lambdasian */
-  constructor(obj) {
-    super(obj); /* access/call to functions on an object's parent */
-    this.specialty = obj.specialty;
-    this.favLanguage = obj.favLanguage;
-    this.catchPhrase = obj.catchPhrase;
+  constructor(att) {
+    super(att); /* access/call to functions on an object's parent */
+    this.specialty = att.specialty;
+    this.favLanguage = att.favLanguage;
+    this.catchPhrase = att.catchPhrase;
   }
   demo(subject) { /* method with demo that receives a subject string as an argument */
     return `Today we are learning about ${subject}`;
@@ -165,11 +165,11 @@ class Instructor extends Lambdasian { /* Instructor with class extending Lambdas
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 class Student extends Lambdasian {
-  constructor(obj) {
-    super(obj); /* access/call to functions on an object's parent */
-    this.previousBackground = obj.previousBackground;
-    this.className = obj.className;
-    this.favSubjects = obj.favSubjects;
+  constructor(att) {
+    super(att); /* access/call to functions on an object's parent */
+    this.previousBackground = att.previousBackground;
+    this.className = att.className;
+    this.favSubjects = att.favSubjects;
   }
   listSubjects() { /* method with listSubjects that returns the favSubjects in a single string */
     return `Loving ${this.favSubjects}`;
@@ -195,16 +195,16 @@ class Student extends Lambdasian {
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager extends Instructor {
+class ProjectManager extends Instructor {  
   constructor(att) {
     super(att);
     this.gradClassName = att.gradClassName;
     this.favInstrutor = att.favInstructor;
   }
-  standUp() {
+  standUp() { /* method with standUp and returns name that announces channel */
     return `${this.name} announces to ${channel}, @channel standy times!`;
   }
-  debugsCode(student, subject) {
+  debugsCode(student, subject) { /* access/call to functions on an object's parent */
     return `${this.name} debugs ${student.name}'s code on ${subject}`;
   }
 }
