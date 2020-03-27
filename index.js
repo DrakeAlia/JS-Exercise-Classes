@@ -199,9 +199,9 @@ class ProjectManager extends Instructor {
   constructor(att) {
     super(att);
     this.gradClassName = att.gradClassName;
-    this.favInstrutor = att.favInstructor;
+    this.favInstructor = att.favInstructor;
   }
-  standUp() { /* method with standUp and returns name that announces channel */
+  standUp(channel) { /* method with standUp and returns name that announces channel */
     return `${this.name} announces to ${channel}, @channel standy times!`;
   }
   debugsCode(student, subject) { /* access/call to functions on an object's parent */
